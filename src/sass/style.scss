@@ -1,0 +1,32 @@
+// xs: 320px,
+// sm: 576px,
+// md: 768px,
+// lg: 992px,
+// xl: 1200px,
+// xxl: 1400px
+
+@import 'base/variables';
+@import 'base/reset';
+
+body {
+    font-family: 'MuseoModerno', cursive;
+    font-weight: 400;
+    font-size: 14px;
+    color: $black-color;
+}
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.none {
+    display: none;
+}
+@import 'blocks/promo';
+@import 'blocks/header';
+@import 'blocks/buttons';
+@import 'blocks//benefits';
+@import 'blocks/benefits-item';
+@import 'blocks/title';
+@import 'blocks/consultation';
+@import 'blocks/forms';

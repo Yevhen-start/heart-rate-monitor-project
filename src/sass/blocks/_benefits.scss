@@ -1,0 +1,36 @@
+.benefits {
+    padding: 70px 0 85px;
+    background-color: #F6F6F6;
+    &__title {
+        margin-bottom: 65px;
+        text-align: center;
+    }
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        flex-wrap: wrap;
+        
+    }
+    &__item {
+        margin-bottom: 25px;
+        &:not(:last-child) {
+            margin-right: 70px;
+        }
+    }
+}
+@media (max-width: 641px) {
+    .benefits {
+        &__items {
+            justify-content: center;
+            margin-right: 0;
+        } 
+        &__item {
+            &:not(:last-child) {
+                margin: 0 auto;
+                margin-bottom: 25px;
+            }
+        }
+    }   
+}
+

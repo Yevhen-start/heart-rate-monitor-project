@@ -1,0 +1,22 @@
+.benefits-item {
+    max-width: 270px;
+    &__img {
+        margin-bottom: 35px;
+    }
+    &__title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    &__text {
+        a {
+            color: $main-color;
+            text-transform: uppercase;
+            text-decoration: underline;
+            transition: text-decoration .3s ease-in;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
