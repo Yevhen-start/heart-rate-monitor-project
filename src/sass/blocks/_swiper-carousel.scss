@@ -2,6 +2,10 @@
 
     &__inner {
 
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            display: none;
+        }
         .swiper-button-prev,
         .swiper-button-next {
             background-image: url('./../icons/arrow-left.svg');
@@ -18,8 +22,20 @@
                 margin: 0 auto;
             }
         }
-        .swiper-pagination {
+        .swiper-pagination-bullet {
             background-color: $main-color;
         }
+    }
+}
+.swiper-pagination {
+    display: none;
+}
+@media (max-width: 992px) {
+    .swiper-pagination {
+        display: block;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
     }
 }
