@@ -13,7 +13,7 @@
 </head>
 <body>
     <!-- promo -->
-    <section class="promo">
+    <section id="up" class="promo">
         <div class="container">
             <!-- header -->
             <header class="header">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="header__contacts">
                     <a href="tel:+34999228974" class="header__phone">+3 (499) 922-89-74</a>
-                    <button class="button">заказать звонок</button>
+                    <button data-modal="consultation" class="button">заказать звонок</button>
                 </div>
             </header>
             <!-- ./header -->
@@ -48,7 +48,7 @@
                         Ответим на все вопросы
                     </div>
                 </div>
-                <button class="button button--main">заказать кОНСУЛЬТАЦИЮ</button>
+                <button data-modal="consultation" class="button button--main">заказать кОНСУЛЬТАЦИЮ</button>
                 <div class="promo__link">
                     или
                     <a href="#!">ПЕРЕЙТИ В КАТАЛОГ</a>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="benefits-item benefits__item">
                     <div class="benefits-item__img">
-                        <img src="./img/benefits/heart.png" alt="heart">
+                        <img class="benefits-item__animation" src="./img/benefits/heart.png" alt="heart">
                     </div>
                     <h3 class="benefits-item__title">Заботимся о здоровье</h3>  
                     <p class="benefits-item__text">Мы работаем для того, чтобы Ваши занятия спортом шли на пользу Вашему здоровью и были в радость Вам и Вашим близким!</p>
@@ -101,9 +101,9 @@
             <div class="consultation__description">
                 Просто заполните форму заявки и мы перезвоним вам в течении 10 минут
             </div> 
-            <form class="feed-form" action="#">
+            <form id="consultation-form" class="feed-form" action="#">
                 <input name="name" required type="text" placeholder="Ваше имя">
-                <input name="phone" required type="number" placeholder="Ваш телефон">
+                <input name="phone" required placeholder="Ваш телефон">
                 <input name="email" required type="email" placeholder="Ваш E-mail">
                 <button class="button button--submit">заказать кОНСУЛЬТАЦИЮ</button>
             </form>
@@ -203,7 +203,7 @@
                             <!-- catalog-item__content -->
                             <div class="catalog-item__content catalog-item__content--active">
                                 <img src="./img/pulse.png" alt="Пульсометр" class="catalog-item__img">
-                                <div class="catalog-item__subtitle">Пульсометр Polar FT1</div>
+                                <div class="catalog-item__subtitle">Пульсометр Waves Ws2</div>
                                 <div class="catalog-item__description">Для первых шагов в тренировках, основанных на сердечном ритме</div>
                                 <a href="#!" class="catalog-item__link">ПОДРОБНЕЕ</a>    
                             </div>
@@ -417,7 +417,7 @@
                             <!-- catalog-item__content -->
                             <div class="catalog-item__content catalog-item__content--active">
                                 <img src="./img/pulse.png" alt="Пульсометр" class="catalog-item__img">
-                                <div class="catalog-item__subtitle">Пульсометр Polar FT1</div>
+                                <div class="catalog-item__subtitle">Пульсометр Polar FT4</div>
                                 <div class="catalog-item__description">Для первых шагов в тренировках, основанных на сердечном ритме</div>
                                 <a href="#!" class="catalog-item__link">ПОДРОБНЕЕ</a>    
                             </div>
@@ -512,10 +512,67 @@
         </div>
     </footer>
     <!-- ./footer -->
+
+    <!-- modal -->
+    <div class="overlay">
+        <!-- modal=-consultation-->
+       <div class="modal" id="consultation">
+           <div class="modal__close">&times;</div>
+           <div class="modal__subtitle">
+               Просто заполните форму заявки
+           </div>
+           <div class="modal__description">
+            и мы перезвоним вам в течении 10 минут
+           </div>
+           <form class="feed-form feed-form--mt" action="#">
+                <input name="name" type="text" placeholder="Ваше имя">
+                <input name="phone" placeholder="Ваш телефон">
+                <input name="email" type="email" placeholder="Ваш E-mail">
+                <button class="button button--submit">заказать кОНСУЛЬТАЦИЮ</button>
+            </form>
+       </div> 
+       <!-- ./modal=-consultation-->
+       <!-- modal-order -->
+        <div class="modal" id="order">
+            <div class="modal__close">&times;</div>
+            <div class="modal__subtitle">
+                Ваш заказ:
+            </div>
+            <div class="modal__description">
+                Пульсометр Polar FT1
+            </div>
+            <form class="feed-form feed-form--mt" action="#">
+                <input name="name" required type="text" placeholder="Ваше имя">
+                <input name="phone" placeholder="Ваш телефон">
+                <input name="email" required type="email" placeholder="Ваш E-mail">
+                <button class="button button--submit">купить</button>
+            </form>
+        </div> 
+        <!-- ./modal-order -->
+        <!-- modal-thanks -->
+        <div class="modal modal--mini" id="thanks">
+            <div class="modal__close">&times;</div>
+            <div class="modal__subtitle">
+                Спасибо за вашу заявку!
+            </div>
+            <div class="modal__description">
+                Наш менеджер свяжется с вами в ближайшее время!
+            </div>
+        </div> 
+        <!-- ./modal-thanks -->
+    </div>
+    <!-- ./modal -->
+
+    <a class="pageup" href="#up">
+        <img src="./icons/circle-chevron-up-solid.svg" alt="circle">
+    </a>
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="./js/slick.min.js"></script>
     <script src="./js/swiper.min.js"></script>
+    <script src="./js/jquery.validate.min.js"></script>
+    <script src="./js/jquery.maskedinput.min.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>

@@ -3,6 +3,12 @@
     &__img {
         margin-bottom: 35px;
     }
+    &__animation {
+        animation-name: heartBeat;    
+        animation-duration: 2s;
+        animation-timing-function: ease;
+        animation-iteration-count: infinite;
+    }
     &__title {
         font-size: 18px;
         font-weight: 700;
